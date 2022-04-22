@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="/dist/style.css">
+    <title>To Do</title>
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="sidebar">
+            <div class="list-organiser">
+                <div>
+                    <div class="list-box-top">
+                        <img src="/dist/assets/inbox-tray_1f4e5.png" alt="today">
+                        <p class="counter">0</p>
+                    </div>
+                    <h3>Today</h3>
+                </div>
+                <div>
+                    <div class="list-box-top">
+                        <img src="/dist/assets/calendar_1f4c5.png" alt="scheduled">
+                        <p class="counter">0</p>
+                    </div>
+                    <h3>Scheduled</h3>
+                </div>
+                <div>
+                    <div class="list-box-top">
+                        <img src="/dist/assets/macos-calendar.png" alt="all">
+                        <p class="counter">0</p>
+                    </div>
+                    <h3>All</h3>
+                </div>
+                <div>
+                    <div class="list-box-top">
+                        <img src="/dist/assets/macos-calendar.png" alt="flagged">
+                        <p class="counter">0</p>
+                    </div>
+                    <h3>Flagged</h3>
+                </div>
+            </div>
+            <div class="lists">
+                <h4>My Lists</h4>
+                <div class="list-section">
+                    <div>
+                        <img src="/dist/assets/macos-calendar.png">
+                        <p>Life Admin</p>
+                    </div>
+                    <div>
+                        <img src="/dist/assets/macos-calendar.png">
+                        <p>Shopping</p>
+                    </div>
+                </div>
+            </div>
+            <div class="add-list">
+                <h3>+ Add List</h3>
+            </div>
+        </div>
+
+        <div class="main">
+            <h1 id="main-title">Today</h1>
+            <div id="todo-list">
+            </div>
+            <div id='todo-btn-main' class="add-task">
+                <img src="/dist/assets/add_black_24dp.svg" alt="plus">
+                <h3>Add Task</h3>
+            </div>
+            <div class="add-todo-btn" id="add_todo"><img src="/dist/assets/add_black_24dp.svg" alt="plus"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+Todo List App Functionality
+
+JS stuff 
+- create to do 
+- remove to do (needs dom)
+- persistence
+
+DOM stuff
+- update elements (priority etc)
+- complete an element (the to do moves into a completed array)
+
+
