@@ -2,27 +2,30 @@ import {
     createToDoElement
 } from './createToDoElement';
 
-//add in a completed paremeter
-
 const toDoList = [];
 
-const toDoFactory = (title, priority, dueDate, id) => {
+const toDoFactory = (title, dueDate, id, complete, list) => {
     return {
         title,
-        priority,
         dueDate,
         id,
+        complete,
+        list,
     };
 };
 
 const createToDo = () => {
 
     let title = document.getElementById('title').value;
-    let priority = document.getElementById('priority').value;
     let dueDate = document.getElementById('dueDate').value;
     let id = Date.now();
+    let complete = false;
+    //assinging list to to do object
+    let list
+    let currentList = document.getElementById('main-title').innerText;
+    list = currentList;
 
-    let newToDo = toDoFactory(title, priority, dueDate, id);
+    let newToDo = toDoFactory(title, dueDate, id, complete, list);
     toDoList.push(newToDo);
     console.log(toDoList);
 

@@ -19,27 +19,23 @@ const createToDoElement = () => {
     const todoList = document.getElementById('todo-list');
     const toDoContainer = document.createElement('div');
     const toDoTitle = document.createElement('div');
-    const toDoPriority = document.createElement('div');
     const toDoDate = document.createElement('div');
     const toDoRemove = document.createElement('div');
     const toDoComplete = document.createElement('div');
+
     todoList.appendChild(toDoContainer);
     toDoContainer.classList.add('toDoContainer');
     toDoContainer.classList.add('fadeIn');
     toDoTitle.classList.add('todo-title');
-    toDoPriority.classList.add('todo-priority');
     toDoDate.classList.add('todo-date');
     toDoRemove.classList.add('todo-remove');
     toDoComplete.classList.add('todo-complete');
     toDoContainer.setAttribute('id', `${toDoList[toDoList.length - 1].id}`);
-    toDoContainer.append(toDoComplete, toDoTitle, toDoPriority, toDoDate, toDoRemove);
+    toDoContainer.append(toDoComplete, toDoTitle, toDoDate, toDoRemove);
     toDoTitle.innerHTML = toDoList[toDoList.length - 1].title;
-    // toDoPriority.innerHTML = toDoList[toDoList.length - 1].priority;
-    toDoPriority.innerHTML = '<img class="priority" src="/dist/assets/triangular-flag_1f6a9.png" alt="priority">';
-    // toDoDate.innerHTML = toDoList[toDoList.length - 1].dueDate;
-    toDoDate.innerHTML = '<img class="duedate" src="/dist/assets/macos-calendar.png" alt="date">';
-    toDoComplete.innerHTML = "<label class='checkbox'><input type='checkbox' class='checkbox__input'/><span class='checkbox__inner'></span></label>";
-    toDoRemove.innerHTML = '<img class="delete" src="/dist/assets/delete_white_24dp.svg" alt="delete"></img>';
+    toDoComplete.innerHTML = "<label class='checkbox'><input type='checkbox' value = 'complete' class='checkbox__input'/><span class='checkbox__inner'></span></label>";
+
+    toDoRemove.innerHTML = `<img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id=${toDoList[toDoList.length - 1].id} alt="delete">`;
     toDoRemove.setAttribute('class', 'removeToDo');
     toDoRemove.setAttribute('id', `${toDoList[toDoList.length - 1].id}`);
     const removeBtns = document.querySelectorAll('.removeToDo');
@@ -47,6 +43,12 @@ const createToDoElement = () => {
         removeBtns[i].addEventListener('click', removeToDo);
         removeBtns[i].addEventListener('click', removeToDoElement);
     }
+
+    if (!Date.parse(toDoList[toDoList.length - 1].dueDate)) {
+        toDoDate.innerHTML = 'No Date';
+    } else if (toDoList[toDoList.length - 1].dueDate !== NaN) {
+        toDoDate.innerHTML = toDoList[toDoList.length - 1].dueDate;
+    };
 };
 
 export {

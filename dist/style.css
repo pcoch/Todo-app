@@ -139,13 +139,15 @@ html {
 :root {
     --main-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     --main-padding: 20px;
-    --small-padding: 10px;
+    --small-padding: 14px;
     --main-bg-color: #18181B;
     --snd-bg-color: #27272A;
     --hlt-color: #3F3F46;
     --snd-hlt-color: #3A5EFF;
     --main-font-color: #F4F4F5;
     --snd-font-color: #A1A1AA;
+    --third-font-color: #A1A1AA;
+    --line-height: 30px;
 }
 
 h1 {
@@ -182,7 +184,7 @@ p {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 275px 1fr;
     grid-template-rows: 1fr;
 }
 
@@ -201,6 +203,7 @@ p {
     grid-template-columns: 1fr 1fr;
     height: 160px;
     margin: var(--small-padding);
+    margin-top: 20px;
 }
 
 .list-organiser>div {
@@ -214,8 +217,12 @@ p {
     height: 50px;
     padding: 10px;
     background-color: var(--hlt-color);
-    border-radius: 13px;
+    border-radius: 10px;
     box-shadow: var(--main-box-shadow);
+}
+
+.list-organiser>div:hover {
+    cursor: pointer;
 }
 
 .list-box-top {
@@ -255,14 +262,14 @@ p {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    height: 40px;
+    height: 38px;
     padding-left: var(--small-padding);
     margin-top: var(--small-padding);
     margin-bottom: var(--small-padding);
 }
 
 .list-section>div:hover {
-    border-radius: 13px;
+    border-radius: 10px;
     background-color: var(--hlt-color);
     box-shadow: var(--main-box-shadow);
     cursor: pointer;
@@ -283,7 +290,7 @@ p {
     bottom: var(--small-padding);
     left: var(--small-padding);
     width: 240px;
-    height: 40px;
+    height: var(--line-height);
     margin-top: var(--main-padding);
 }
 
@@ -292,11 +299,63 @@ p {
 }
 
 .add-list:hover {
-    border-radius: 13px;
+    border-radius: 10px;
     background-color: var(--hlt-color);
     box-shadow: var(--main-box-shadow);
     cursor: pointer;
     transition: 0.2s;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-container-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: var(--main-padding);
+    margin-right: var(--main-padding);
+    margin-top: var(--small-padding);
+}
+
+.list-add.button {
+    width: 100%;
+    margin-right: var(--small-padding);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.list-cancel.button {
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.list-input {
+    margin-left: var(--main-padding);
+    margin-right: var(--main-padding);
+    background-color: var(--hlt-color);
+    box-shadow: var(--main-box-shadow);
+    border-radius: 10px;
+    height: var(--line-height);
+    border: none;
+    padding-left: var(--small-padding);
+    padding-right: var(--small-padding);
+    color: var(--main-font-color);
+}
+
+.list-item>p {
+    pointer-events: none;
+}
+
+.list-item>img {
+    pointer-events: none;
 }
 
 /* main section */
@@ -316,17 +375,19 @@ p {
     flex-direction: row;
     align-items: center;
     height: 45px;
-    width: 100%;
-    border-radius: 13px;
+    max-width: 964px;
+    min-width: 564px;
+    border-radius: 10px;
 }
 
 .add-task>h3 {
     font-size: 14px;
     padding-left: var(--small-padding);
+    color: var(--third-font-color);
 }
 
 .add-task>img {
-    padding-left: var(--small-padding);
+    padding-left: 7.5px;
 }
 
 .add-task:hover {
@@ -355,7 +416,9 @@ p {
 
 /* to do input form  */
 #todo_form {
-    width: 100%;
+    color: var(--main-font-color);
+    max-width: 956px;
+    min-width: 264px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -367,8 +430,8 @@ p {
 #todo_form>input {
     background-color: var(--snd-bg-color);
     box-shadow: var(--main-box-shadow);
-    border-radius: 13px;
-    height: 40px;
+    border-radius: 10px;
+    height: var(--line-height);
     border: none;
     padding-left: var(--small-padding);
     padding-right: var(--small-padding);
@@ -388,36 +451,23 @@ input {
     width: 300px;
 }
 
-#todo_form>select {
-    background-color: var(--snd-bg-color);
-    box-shadow: var(--main-box-shadow);
-    border-radius: 13px;
-    border: none;
-    padding-left: var(--small-padding);
-    margin-right: var(--small-padding);
-    padding-right: var(--small-padding);
-    color: var(--main-font-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    text-indent: 1px;
-    height: 40px;
-    min-width: 80px;
-    text-align: center;
+#dueDate {
+    width: 150px;
 }
 
-.down-arrow {
-    font-size: 2px;
+#dueDate:hover {
+    cursor: pointer;
 }
 
 #todo_form>button {
     background-color: var(--snd-hlt-color);
-    color: white;
+    color: var(--main-font-color);
     box-shadow: var(--main-box-shadow);
-    border-radius: 13px;
+    border-radius: 10px;
     border: none;
-    height: 40px;
+    height: var(--line-height);
     min-width: 85px;
-    margin-right: var(--small-padding);
+    font-weight: 500;
 }
 
 #todo_form>button:hover {
@@ -428,50 +478,59 @@ input {
 .toDoContainer {
     display: grid;
     grid-template-rows: 1;
-    grid-template-columns: 50px 1fr 30px 30px 30px;
+    grid-template-columns: 40px 1fr 120px;
     justify-items: start;
     align-items: center;
-    width: 100%;
-    height: 2.5rem;
+    max-width: 1000px;
+    min-width: 400px;
+    height: var(--line-height);
     margin-top: var(--main-padding);
     margin-bottom: var(--main-padding);
-    padding-left: var(--main-padding);
-    padding-right: var(--main-padding);
-    box-shadow: var(--main-box-shadow);
     transition: 0.2s;
 }
 
 .todo-complete {
     align-self: center;
+    justify-self: center;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
 .todo-title {
+    padding-left: 5px;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
-}
-
-.todo-priority {
-    align-self: center;
-    justify-self: center;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    font-size: .9rem;
+    color: var(--main-font-color);
 }
 
 .todo-date {
+    grid-column-start: 3;
+    grid-column-end: 4;
     align-self: center;
     justify-self: center;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--snd-hlt-color);
+    border-radius: 10px;
+    height: var(--line-height);
+    width: 85px;
+    font-size: 12px;
 }
 
 .removeToDo {
     align-self: center;
     justify-self: center;
-    grid-column-start: 5;
-    grid-column-end: 6;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    opacity: 0;
+}
+
+.toDoContainer:hover>.removeToDo {
+    opacity: 1;
+    transition: 0.25s;
 }
 
 .checkbox {
@@ -491,20 +550,57 @@ input {
 
 .checkbox__inner {
     display: inline-block;
-    min-width: 20px;
-    min-height: 20px;
+    min-width: 18px;
+    min-height: 18px;
     border-radius: 50%;
     border: 1px solid #626262;
     background: transparent no-repeat center;
+    transition: 0.2s;
 }
 
 .checkbox__input:checked+.checkbox__inner {
     border-color: var(--snd-hlt-color);
     background-color: var(--snd-hlt-color);
     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='14px' height='10px' viewBox='0 0 14 10' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 59.1 (86144) - https://sketch.com --%3E%3Ctitle%3Echeck%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='ios_modification' transform='translate(-27.000000, -191.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Group-Copy' transform='translate(0.000000, 164.000000)'%3E%3Cg id='ic-check-18px' transform='translate(25.000000, 23.000000)'%3E%3Cpolygon id='check' points='6.61 11.89 3.5 8.78 2.44 9.84 6.61 14 15.56 5.05 14.5 4'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-size: 14px 10px;
+    background-size: 10px 10px;
+    transition: 0.2s;
 }
 
+.delete {
+    height: 20px;
+    width: 20px;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.delete:hover {
+    cursor: pointer;
+    background-color: var(--hlt-color);
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.duedate {
+    height: 20px;
+    width: 20px;
+}
+
+/* ui components  */
+.button {
+    background-color: var(--snd-hlt-color);
+    color: var(--main-font-color);
+    box-shadow: var(--main-box-shadow);
+    border-radius: 10px;
+    border: none;
+    height: var(--line-height);
+    min-width: 85px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* effects */
 .fadeIn {
     animation: fadeInAnimation linear 0.30s;
     animation-iteration-count: 1;
@@ -521,25 +617,6 @@ input {
     }
 }
 
-.delete {
-    height: 20px;
-    width: 20px;
-}
-
-.delete:hover {
-    cursor: pointer;
-}
-
-.priority {
-    height: 20px;
-    width: 20px;
-}
-
-.priority:hover {
-    cursor: pointer;
-}
-
-.duedate {
-    height: 20px;
-    width: 20px;
+.hide {
+    display: none;
 }

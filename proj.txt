@@ -1,12 +1,10 @@
-Todo List App Functionality
+- edit date
+- edit title
+- add to do to list
+- remove add to do on today, scheduled, and overdue
 
-JS stuff 
-- create to do 
-- remove to do (needs dom)
-- persistence
+Top lists are organised by date
+My lists are organised by the list name that is (somehow) applied when a to do is created in the list view
 
-DOM stuff
-- update elements (priority etc)
-- complete an element (the to do moves into a completed array)
-
-
+How do i get the current my list to add to the To Do Object?
+- 
