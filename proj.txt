@@ -1,10 +1,8 @@
+To Do
 - edit date
 - edit title
-- add to do to list
-- remove add to do on today, scheduled, and overdue
+- complete to do
 
-Top lists are organised by date
-My lists are organised by the list name that is (somehow) applied when a to do is created in the list view
 
-How do i get the current my list to add to the To Do Object?
-- 
+Bugs
+- items aren't staying as checked

@@ -27,11 +27,11 @@ const createList = () => {
 
     const lists = document.querySelectorAll('.list-section');
     for (let i = 0; i < lists.length; i++) {
-        lists[i].addEventListener('click', selectList)
-    }
+        lists[i].addEventListener('click', selectList);
+    };
 };
 
 export {
     createList,
-    toDoMasterList
+    toDoMasterList,
 };

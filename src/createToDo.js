@@ -2,6 +2,10 @@ import {
     createToDoElement
 } from './createToDoElement';
 
+import {
+    updateListCounter
+} from './updateListCounter'
+
 const toDoList = [];
 
 const toDoFactory = (title, dueDate, id, complete, list) => {
@@ -30,6 +34,7 @@ const createToDo = () => {
     console.log(toDoList);
 
     createToDoElement();
+    updateListCounter();
 };
 
 export {
