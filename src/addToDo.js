@@ -14,6 +14,8 @@ const addToDo = () => {
         newForm.innerHTML = formHtml;
         toDoList.append(newForm);
         document.querySelector('.submit').onclick = createToDo;
+        document.getElementById('title').focus();
+
     } else {
         document.getElementById('title').focus();
     };

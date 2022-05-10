@@ -14,6 +14,7 @@ const createListInput = () => {
         const listContainer = document.createElement('div');
 
         listContainer.classList.add('list-container');
+        listContainer.classList.add('fadeIn');
         listContainer.innerHTML = '<input class="list-input" id="list-title" type="text"><div class="list-container-btns"><div class="list-add button">Add</div><div class="list-cancel button">Cancel</div></div>';
         sidebar.append(listContainer);
 
@@ -24,7 +25,6 @@ const createListInput = () => {
     } else {
         document.querySelector('.list-input').focus();
     }
-
 };
 
 const addListBtn = document.querySelector('.add-list');

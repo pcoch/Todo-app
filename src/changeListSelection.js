@@ -10,6 +10,10 @@ import {
     removeToDoElement
 } from './removeToDoElement';
 
+import {
+    completeToDo
+} from './completeToDo';
+
 const inboxButton = document.getElementById('inbox');
 const todayButton = document.getElementById('today');
 const scheduledButton = document.getElementById('scheduled');
@@ -52,11 +56,17 @@ const selectInbox = (e) => {
     };
 
     inboxToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input type="checkbox" value="complete" class="checkbox__input"><span class="checkbox__inner"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
     });
+
+    //re-add event listeners
+    const checkbox = document.querySelectorAll('.checkbox');
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener('change', completeToDo);
+    };
 
     addRemoveListener();
 };
@@ -66,9 +76,6 @@ const selectToday = (e) => {
     titlEl.innerHTML = 'Today';
     addToDoBtn.classList.add('hide');
     removeToDoList();
-
-    // let date = new Date();
-    // let today = date.toISOString().split('T')[0];
 
     let tzoffset = (new Date()).getTimezoneOffset() * 60000;
     let today = (new Date(Date.now() - tzoffset)).toISOString().split('T')[0];
@@ -80,11 +87,17 @@ const selectToday = (e) => {
     };
 
     todayToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input type="checkbox" value="complete" class="checkbox__input"><span class="checkbox__inner"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
     });
+
+    //re-add event listeners
+    const checkbox = document.querySelectorAll('.checkbox');
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener('change', completeToDo);
+    };
 
     addRemoveListener();
 };
@@ -105,11 +118,17 @@ const selectScheduled = (e) => {
     };
 
     scheduledToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input type="checkbox" value="complete" class="checkbox__input"><span class="checkbox__inner"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" value="complete" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
     });
+
+    //re-add event listeners
+    const checkbox = document.querySelectorAll('.checkbox');
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener('change', completeToDo);
+    };
 
     addRemoveListener();
 };
@@ -127,11 +146,17 @@ const selectAll = (e) => {
     };
 
     allToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input type="checkbox" value="complete" class="checkbox__input"><span class="checkbox__inner"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
     });
+
+    //re-add event listeners
+    const checkbox = document.querySelectorAll('.checkbox');
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener('change', completeToDo);
+    };
 
     addRemoveListener();
 };
@@ -149,11 +174,17 @@ const selectList = (e) => {
     };
 
     listToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input type="checkbox" value="complete" class="checkbox__input"><span class="checkbox__inner"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
     });
+
+    //re-add event listeners
+    const checkbox = document.querySelectorAll('.checkbox');
+    for (let i = 0; i < checkbox.length; i++) {
+        checkbox[i].addEventListener('change', completeToDo);
+    };
 
     addRemoveListener();
 };

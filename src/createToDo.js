@@ -4,9 +4,14 @@ import {
 
 import {
     updateListCounter
-} from './updateListCounter'
+} from './updateListCounter';
 
-const toDoList = [];
+import {
+    setStorage,
+    getStorage,
+} from './storage';
+
+let toDoList = [];
 
 const toDoFactory = (title, dueDate, id, complete, list) => {
     return {
@@ -20,25 +25,28 @@ const toDoFactory = (title, dueDate, id, complete, list) => {
 
 const createToDo = () => {
 
-    let title = document.getElementById('title').value;
-    let dueDate = document.getElementById('dueDate').value;
-    let id = Date.now();
-    let complete = false;
-    //assinging list to to do object
-    let list
-    let currentList = document.getElementById('main-title').innerText;
-    list = currentList;
+    if (document.getElementById('title').value !== '') {
 
-    let newToDo = toDoFactory(title, dueDate, id, complete, list);
-    toDoList.push(newToDo);
-    console.log(toDoList);
+        let title = document.getElementById('title').value;
+        let dueDate = document.getElementById('dueDate').value;
+        let id = Date.now();
+        let complete = false;
+        //assinging list to todo object
+        let list
+        let currentList = document.getElementById('main-title').innerText;
+        list = currentList;
 
-    createToDoElement();
-    updateListCounter();
+        let newToDo = toDoFactory(title, dueDate, id, complete, list);
+        toDoList.push(newToDo);
+
+        createToDoElement();
+        updateListCounter();
+        setStorage();
+    };
 };
 
 export {
     toDoFactory,
     createToDo,
-    toDoList
+    toDoList,
 };

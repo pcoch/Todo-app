@@ -27,3 +27,16 @@ import {
 import {
     updateListCounter
 } from './updateListCounter';
+
+import {
+    removeListElement
+} from './removeList';
+
+import {
+    completeToDo
+} from './completeToDo';
+
+import {
+    getStorage,
+    setStorage
+} from './storage';

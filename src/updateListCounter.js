@@ -48,10 +48,6 @@ const updateListCounter = () => {
     allCounter.innerHTML = allToDos.length;
 };
 
-window.onload = function () {
-    updateListCounter();
-};
-
 export {
     updateListCounter
 }
