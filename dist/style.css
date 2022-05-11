@@ -390,7 +390,7 @@ p {
     align-items: center;
     height: 45px;
     max-width: 964px;
-    min-width: 564px;
+    min-width: 200px;
     border-radius: 10px;
 }
 
@@ -411,7 +411,8 @@ p {
 }
 
 .add-todo-btn {
-    display: flex;
+    display: none;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -496,7 +497,7 @@ input {
     justify-items: start;
     align-items: center;
     max-width: 1000px;
-    min-width: 400px;
+    min-width: 320px;
     height: var(--line-height);
     margin-top: var(--main-padding);
     margin-bottom: var(--main-padding);
@@ -562,7 +563,7 @@ input {
 
 .checkbox__input {
     position: absolute;
-    opacity: 1;
+    opacity: 0;
 }
 
 .checkbox__inner {
@@ -602,6 +603,10 @@ input {
     width: 20px;
 }
 
+.hamburger {
+    display: none;
+}
+
 /* ui components  */
 .button {
     background-color: var(--snd-hlt-color);
@@ -636,4 +641,59 @@ input {
 
 .hide {
     display: none;
+}
+
+/* Media Queries */
+@media (max-width: 720px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-show {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        background-color: var(--snd-bg-color);
+    }
+
+    .main {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    /* when side bar is hidden, then show the hamburger, then add JS for onclick to open it up, when open up, it transitons */
+
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 50px;
+        margin-right: 50px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        background-color: #3A5EFF;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .hamburger>img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .show {
+        display: block;
+        z-index: 1;
+    }
 }

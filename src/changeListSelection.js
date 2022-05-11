@@ -14,6 +14,10 @@ import {
     completeToDo
 } from './completeToDo';
 
+import {
+    toggleSideBar
+} from './toggleSidebar';
+
 const inboxButton = document.getElementById('inbox');
 const todayButton = document.getElementById('today');
 const scheduledButton = document.getElementById('scheduled');
@@ -21,6 +25,8 @@ const allButton = document.getElementById('all');
 const todoList = document.getElementById('todo-list');
 const addToDoBtn = document.getElementById('todo-btn-main');
 const titlEl = document.getElementById('main-title');
+const sidebar = document.querySelector('.sidebar');
+
 
 window.onload = function () {
     inboxButton.addEventListener('click', selectInbox);
@@ -68,11 +74,16 @@ const selectInbox = (e) => {
         checkbox[i].addEventListener('change', completeToDo);
     };
 
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        sidebar.classList.remove('show');
+    };
+
     addRemoveListener();
 };
 
 //if click on today
 const selectToday = (e) => {
+
     titlEl.innerHTML = 'Today';
     addToDoBtn.classList.add('hide');
     removeToDoList();
@@ -97,6 +108,10 @@ const selectToday = (e) => {
     const checkbox = document.querySelectorAll('.checkbox');
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].addEventListener('change', completeToDo);
+    };
+
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        sidebar.classList.remove('show');
     };
 
     addRemoveListener();
@@ -130,6 +145,10 @@ const selectScheduled = (e) => {
         checkbox[i].addEventListener('change', completeToDo);
     };
 
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        sidebar.classList.remove('show');
+    };
+
     addRemoveListener();
 };
 
@@ -158,6 +177,10 @@ const selectAll = (e) => {
         checkbox[i].addEventListener('change', completeToDo);
     };
 
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        sidebar.classList.remove('show');
+    };
+
     addRemoveListener();
 };
 
@@ -184,6 +207,10 @@ const selectList = (e) => {
     const checkbox = document.querySelectorAll('.checkbox');
     for (let i = 0; i < checkbox.length; i++) {
         checkbox[i].addEventListener('change', completeToDo);
+    };
+
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        sidebar.classList.remove('show');
     };
 
     addRemoveListener();

@@ -1,11 +1,7 @@
-May as well make it awesome. Spend time and get it done.
-
 To Do
-- make responsive
 - edit date
 - edit title
+- refresh on current page
 
 Bugs
 - css when changing width and add button is out of line (need to shorten width of the other elements)
-- add butn works on all pages (top right)
-- changing to do lists, if to do is already completed, clicking on again completes it

@@ -7,16 +7,13 @@ import {
 } from './createList';
 
 import {
-    selectInbox
+    selectInbox,
+    selectList
 } from './changeListSelection';
 
 import {
     updateListCounter
 } from './updateListCounter';
-
-import {
-    selectList,
-} from './changeListSelection';
 
 import {
     removeListElement,
@@ -26,8 +23,11 @@ import {
     completeToDo
 } from './completeToDo';
 
-const setStorage = () => {
+import {
+    toggleSideBar
+} from './toggleSidebar';
 
+const setStorage = () => {
     localStorage.setItem('storedToDoList', JSON.stringify(toDoList));
     localStorage.setItem('storedLists', JSON.stringify(toDoMasterList));
 };
@@ -44,17 +44,19 @@ const getStorage = () => {
     if (toDoMasterList == null) {
         toDoMasterList = [];
     }
-    console.log(toDoMasterList)
+
 };
 
 window.addEventListener('load', () => {
     getStorage();
     selectInbox();
     updateListCounter();
+    toggleSideBar();
+
 
     //generate lists
     for (let i = 0; i < toDoMasterList.length; i++) {
-        const card = `<div class='list-item' id='${toDoMasterList[i]}'><img src="/dist/assets/macos-calendar.png"><p>${toDoMasterList[i]}</p><img id='${toDoMasterList[i]}' class="remove-list"src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
+        const card = `<div class='list-item' id='${toDoMasterList[i]}'><img src="/dist/assets/pushpin_1f4cc.png"><p>${toDoMasterList[i]}</p><img id='${toDoMasterList[i]}' class="remove-list"src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.querySelector('.list-section').appendChild(ele.firstChild);
