@@ -26,3 +26,7 @@ toDoBtn.addEventListener('click', addToDo);
 
 const toDoBtnMain = document.getElementById('todo-btn-main');
 toDoBtnMain.addEventListener('click', addToDo);
+
+export {
+    addToDo
+}

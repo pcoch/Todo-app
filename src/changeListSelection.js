@@ -14,10 +14,6 @@ import {
     completeToDo
 } from './completeToDo';
 
-import {
-    toggleSideBar
-} from './toggleSidebar';
-
 const inboxButton = document.getElementById('inbox');
 const todayButton = document.getElementById('today');
 const scheduledButton = document.getElementById('scheduled');
@@ -222,4 +218,5 @@ export {
     selectScheduled,
     selectAll,
     selectList,
+    todayToDos
 };

@@ -3,7 +3,9 @@ import {
     createToDo,
 } from './createToDo';
 
-import addToDo from './addToDo';
+import {
+    addToDo
+} from './addToDo';
 
 import {
     createListInput,
