@@ -58,7 +58,7 @@ const selectInbox = (e) => {
     };
 
     inboxToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
@@ -94,7 +94,7 @@ const selectToday = (e) => {
     };
 
     todayToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
@@ -129,7 +129,7 @@ const selectScheduled = (e) => {
     };
 
     scheduledToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" value="complete" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" value="complete" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
@@ -161,7 +161,7 @@ const selectAll = (e) => {
     };
 
     allToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);
@@ -193,7 +193,7 @@ const selectList = (e) => {
     };
 
     listToDos.forEach(todo => {
-        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
+        const card = `<div class="toDoContainer fadeIn" id="${todo.id}"><div class="todo-complete"><label class="checkbox"><input id="${todo.id}" type="checkbox" class="checkbox__input" ${todo.complete == false ? '' : 'checked'}><span class="checkbox__inner ${todo.complete == false ? '' : 'checked'}"></span></label></div><div class="todo-title">${todo.title}</div><div class="todo-date">${todo.dueDate == '' ? 'No Date' : todo.dueDate}</div><div class="removeToDo" id="${todo.id}"><img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id="${todo.id}" alt="delete"></div></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.getElementById('todo-list').appendChild(ele.firstChild);

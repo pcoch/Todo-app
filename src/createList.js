@@ -21,7 +21,7 @@ const createList = () => {
     const myLists = document.querySelector('.lists');
     const listContainer = document.createElement('div');
 
-    listContainer.innerHTML = `<div class='list-item fadeIn' id='${title}'><img src="/dist/assets/pushpin_1f4cc.png"><p>${title}</p><img id='${title}' class="remove-list"src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
+    listContainer.innerHTML = `<div class='list-item fadeIn' id='${title}'><img src="/assets/pushpin_1f4cc.png"><p>${title}</p><img id='${title}' class="remove-list"src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
     listContainer.classList.add('list-section');
     myLists.append(listContainer);
 

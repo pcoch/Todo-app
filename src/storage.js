@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
 
     //generate lists
     for (let i = 0; i < toDoMasterList.length; i++) {
-        const card = `<div class='list-item' id='${toDoMasterList[i]}'><img src="/dist/assets/pushpin_1f4cc.png"><p>${toDoMasterList[i]}</p><img id='${toDoMasterList[i]}' class="remove-list"src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
+        const card = `<div class='list-item' id='${toDoMasterList[i]}'><img src="/assets/pushpin_1f4cc.png"><p>${toDoMasterList[i]}</p><img id='${toDoMasterList[i]}' class="remove-list"src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg"></div>`;
         const ele = document.createElement('div');
         ele.innerHTML = card;
         document.querySelector('.list-section').appendChild(ele.firstChild);

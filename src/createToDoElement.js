@@ -41,7 +41,7 @@ const createToDoElement = () => {
         toDoTitle.innerHTML = toDoList[toDoList.length - 1].title;
         toDoComplete.innerHTML = `<label class='checkbox'><input id='${toDoList[toDoList.length - 1].id}' type='checkbox' class='checkbox__input'/><span class='checkbox__inner'></span></label>`;
 
-        toDoRemove.innerHTML = `<img src="/dist/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id=${toDoList[toDoList.length - 1].id} alt="delete">`;
+        toDoRemove.innerHTML = `<img src="/assets/close_FILL0_wght700_GRAD0_opsz48.svg" class="delete" id=${toDoList[toDoList.length - 1].id} alt="delete">`;
         toDoRemove.setAttribute('class', 'removeToDo');
         toDoRemove.setAttribute('id', `${toDoList[toDoList.length - 1].id}`);
         const removeBtns = document.querySelectorAll('.removeToDo');
